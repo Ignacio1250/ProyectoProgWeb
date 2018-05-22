@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +23,7 @@
     <div id="Subindice">
         
                 
-      <form onsubmit="login.php" method="POST">           
+      <form action="../Modelo/acceso.php" method="POST">           
         <br>
         <div id="camposlogin">
                 <label for="usuario">Usuario:</label>
@@ -29,17 +32,19 @@
                 
         </div>
         <div id="inputlogin">
-        <input id="usuario" type="text" name="idusuario" width="70px" ><br>
-        <input type="text" id="password" name="Password" width="70px">
+        <input id="usuario" type="text" name="usuario" width="70px" ><br>
+        <input type="password" id="password" name="Password" width="70px">
         </div>
    <div id="log">
-    <input type="button" value="Login" id="login"><br>
+    <input type="submit" value="Login" id="login"><br>
     </form>
     <img src="../img/carita.jpg" width="30px" height="30px"/><a href="Login.php" id="ligalostpass">¿Olvidaste tu contraseña de E-music?</a>
+    
 </div>
     </div>
 </aside>
-<footer>
+
+    <footer>
     <div>
         <p>Todos los derechos reservados para E-MUSIC</p>
     </div>

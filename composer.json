@@ -1,0 +1,13 @@
+{
+    "name": "sony/proyecto",
+    "authors": [
+        {
+            "name": "José Ignacio",
+            "email": "jcolohua@mediomelon.mx"
+        }
+    ],
+    "require": {
+        "twig/twig": "^2.0",
+        "phroute/phroute": "^2.1"
+    }
+}

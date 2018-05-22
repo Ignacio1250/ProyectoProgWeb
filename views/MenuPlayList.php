@@ -1,12 +1,14 @@
-<!Doctype <!DOCTYPE html>
+<?php
+require_once("../Modelo/musica.php");
+?>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Song's E-Music</title>
+    <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="../css/Playlist.css" />
-    <script src="main.js"></script>
+  
+    <link rel="stylesheet" type="text/css" href="../css/playlist.css">
 </head>
 <body>
 
@@ -21,18 +23,24 @@
 
 <select id="seleccionCanciones" name="Genero">
     <option disabled>Lo más reciente</option>
-<option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
+<option value="AlbumesREC">Albumes</option>
+  <option value="ArtistasREC">Artistas</option>
+  <option value="GeneroREC">Genero</opion>
   <option disabled >Lo más escuchado</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
+  <option value="AlbumesESC">Albumes</option>
+  <option value="ArtistasESC">Artistas</option>
+  <option value="GeneroESC">Genero</option>
 <option disabled>Musica de interes</option>
-<option value="Musica1">Musica1</option>
-<option value="musica2">Musica2</option>
+<option value="AlbumesINT">Albumes</option>
+<option value="ArtistasINT">Artistas</option>
+<option value="GeneroESC">Genero</option>
 <option disabled>Mi lista de repriducciones</option>
-<option value="lista1">Lista1</option>
+<option value="AlbumesINT">Albumes</option>
+<option value="ArtistasINT">Artistas</option>
+<option value="GeneroESC">Genero</option>
 </select>
-
+<?php
+?>
 <div id="search">
 <form>
     <label id="busqueda">Buscar en la lista</label>
@@ -42,7 +50,17 @@
 </div>
 
 <div id="contenedorCanciones">
+<select name="canciones">
+<?php
 
+$canciones=getmusica();
+
+for($i=0;$i<(count($canciones));$i++){
+
+echo "<option >".$canciones[$i][2]."</option>";
+}
+?>
+</select>
 
 
 </div>
@@ -50,9 +68,10 @@
 <form>
 <input id="botondescarga" type="submit" value="Descargar Musica">
 </form>
-
-<?php
-include_once("../footer.html");
-?>
+    <footer>
+    <div>
+        <p>Todos los derechos reservados para E-MUSIC</p>
+    </div>
+    </footer>
 </body>
 </html>

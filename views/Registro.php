@@ -7,14 +7,23 @@
     <title>E-MUSIC</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="../css/index.css" />
-    <script href="js/index.js"></script>
+    <script>
+function validar(obj){
+	var d = document.getElementById("Envio");
+	if(obj.checked==true){
+		d.disabled = false;
+	}else{
+		d.disabled= true;
+	}
+}
+</script>
 </head>
 
 <body>
 <?php
 include_once("../header.html");
 ?>    
-    <form action="" method="POST" id="formulario">
+    <form action="../Modelo/Usuario.php" method="POST" id="formulario" name="formulario">
         <label for="name">Ingresa tu nombre:</label>
         <input type="text" name="name" id="name" placeholder="Nombre">
 
@@ -29,9 +38,9 @@ include_once("../header.html");
         <input type="password" name="password" id="password" placeholder="password">
         <div>
             <label>
-                <input type="checkbox" class="politicas" id="politicas">¿Aceptas las politicas de "E-MUSIC"?</label>
+                <input type="checkbox" class="politicas" id="politicas" onclick="javascript:validar(this);">¿Aceptas las politicas de "E-MUSIC"?</label>
         </div>
-        <button type="button" id="Envio" onclick="validar()">Registrar</button>
+        <button type="submit"  id="Envio" onclick="validar()" disabled>Registrar</button>
         <button type="reset" onclick="this.reset()">Borrar campos</button>
     </form>
 
