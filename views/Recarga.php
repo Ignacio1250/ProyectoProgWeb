@@ -1,3 +1,7 @@
+<?php
+session_start();
+$usuario=$_SESSION['id'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,19 +19,20 @@ include_once("../header.html")
 ?>
 <img id="logo" src="../img/E-Music.jpg">
 
-<form action="Login.php" method="post">
+<form action="../Modelo/Recarga.php" method="POST">
+<input type="hidden" name="usuario" id="usuario" value="<?php echo $usuario;?>"/>
 <div>
 <label name="monto">Ingresa el monto de recarga: </label>
 <input name="monto" placeholder="Monto de recarga" />
 </div>
 
 <div>
-<label type="text" name="cuenta">Ingresa el c&oacute;digo de recarga: </label>
+<label type="text" name="cuenta">Ingresa el c&oacute;digito de recarga: </label>
 <input type="text" name="cuenta" placeholder="C&oacute;digo de verificaci&oacute;n" />
 </div>
 
 <div>
-<button type="button" id="Envio">Verificar</button>
+<button type="submit" id="Envio">Verificar</button>
 </div>
 
 </form>

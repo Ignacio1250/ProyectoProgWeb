@@ -67,3 +67,13 @@ img#imagenbotondescarga{
     float: left;
     margin-left: 30%;
 }
+a#salir{
+    text-decoration: none;
+    display: block;
+    background-color: greenyellow;
+    padding: 10px;
+}
+a#ligaadmin{
+    text-decoration: none;
+    
+}

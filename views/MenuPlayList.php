@@ -1,14 +1,20 @@
 <?php
 require_once("../Modelo/musica.php");
+session_start();
+
 ?>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>Page Title</title>
+    <title>Canciones</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
   
     <link rel="stylesheet" type="text/css" href="../css/playlist.css">
+    <script src="../js/seleccion.js">
+    
+
+    </script>
 </head>
 <body>
 
@@ -17,6 +23,7 @@ require_once("../Modelo/musica.php");
             <h1>Bienvenido a "E-MUSIC"</h1>
             <h3>PlayList E-Music</h3>
         </hgroup>
+    <a id="salir" name="salir" href="../Modelo/salir.php">Salir</a>
     </header>
     <img id="ImagenAlbum"> 
 <h1>Lista de reproducciones E-Music</h><br>
@@ -44,30 +51,45 @@ require_once("../Modelo/musica.php");
 <div id="search">
 <form>
     <label id="busqueda">Buscar en la lista</label>
-    <input type="text" id="busqueda" placeholder="Search"/>
+    <input type="text" id="busqueda" onkeyup="busqueda(this.value);" placeholder="Search"/>
     <input type="submit" value="Buscar">
 </form>
 </div>
 
-<div id="contenedorCanciones">
-<select name="canciones">
+<div id="contenedorCanciones"style="overflow-y: scroll; height:200px;">
+
+
 <?php
 
 $canciones=getmusica();
-
+echo "<ul>";
 for($i=0;$i<(count($canciones));$i++){
-
-echo "<option >".$canciones[$i][2]."</option>";
+echo "<li onclick=seleccionar(".$canciones[$i][0].");>".$canciones[$i][2]."</li>";
 }
+echo "</ul>";
 ?>
-</select>
-
 
 </div>
+<form action="Descarga.php" method="POST">
+<input type="hidden" id="cancion" name="cancion" >
 <img id="imagenbotondescarga" src="../img/botondescarga.png" with=50 height=50>
-<form>
-<input id="botondescarga" type="submit" value="Descargar Musica">
+<?php if($_SESSION['id']!="admin"){
+echo "<input id='botondescarga' type='submit' value='Descargar Musica'>";
+
+}
+?>
 </form>
+<?php 
+if($_SESSION["id"]=="admin"){
+    echo "<a id='ligaadmin' href='../views/admin.php'>Agregar Canciones y Albumes</a>";
+}
+?>
+</ul>
+
+
+
+
+
     <footer>
     <div>
         <p>Todos los derechos reservados para E-MUSIC</p>

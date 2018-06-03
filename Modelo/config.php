@@ -11,7 +11,7 @@ $bRet = false;
         //$this->oConexion = new PDO("mysql:dbname=hospital;port=3307;host=Localhost,hospital,hospital1"); 
         $this->oConexion = new PDO($dsn, $user, $password);
         $bRet = true;
-        echo 'conexion exitosa';
+       
     }catch(Exception $e){
         throw $e;
     }
