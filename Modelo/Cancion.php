@@ -10,6 +10,7 @@ $nombrealbum=$_POST['nombrealbum'];
      $Autor=$_POST['Autor'];
      $Duracion=$_POST['Duracion'];
      $Costo=$_POST['Costo'];
+     $Link=$_POST['Link'];
     
      $query="select id from album where nombre='".$nombrealbum."';";
      $resultado=$pdo->ejecutarConsulta($query);
@@ -18,7 +19,7 @@ $nombrealbum=$_POST['nombrealbum'];
          echo "<h1>Ocurrio un error :( </h1>";
      }else{
   $id_album=$resultado[0][0];
-        $query="Insert into cancion(id_album,nombre,cantante,autor,duracion,costo) values('".$id_album."','".$Nombre."','".$Cantante."','".$Autor."','".$Duracion."','".$Costo."');";
+        $query="Insert into cancion(id_album,nombre,cantante,autor,duracion,costo,link) values('".$id_album."','".$Nombre."','".$Cantante."','".$Autor."','".$Duracion."','".$Costo."','".$Link."')";
         $pdo->ejecutarConsulta($query);
         header("Location:../views/admin.php");
     }

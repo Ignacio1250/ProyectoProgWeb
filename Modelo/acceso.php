@@ -13,7 +13,7 @@ if($result==null){
     $query="select * from admin where Usuario='".$username."' and Contrasena='".$pass."';";
     $result=$pdo->ejecutarConsulta($query);
     if($result==null){
-    header("Location: ../views/Login.php");
+    header("Location: ../views/index.php");
 }else{
     session_start();
     $_SESSION['id']="admin";

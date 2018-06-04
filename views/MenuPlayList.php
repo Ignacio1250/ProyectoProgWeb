@@ -23,7 +23,7 @@ session_start();
             <h1>Bienvenido a "E-MUSIC"</h1>
             <h3>PlayList E-Music</h3>
         </hgroup>
-    <a id="salir" name="salir" href="../Modelo/salir.php">Salir</a>
+    <a id="salir" name="salir" href="../Modelo/Salir.php">Salir</a>
     </header>
     <img id="ImagenAlbum"> 
 <h1>Lista de reproducciones E-Music</h><br>

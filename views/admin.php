@@ -59,6 +59,8 @@ echo "</select><br>";
 <input type="text" placeholder="Duracion" name="Duracion" id="Duracion"><br>
 <label for="Costo">Costo</label><br>
 <input type="text" placeholder="Costo" name="Costo" id="Costo"><br>
+<label for="Link">Link</label><br>
+<input type="text" placeholder="Link" name="Link" id="Link"><br>
 <button type="submit">Guardar Cancion</button>
 </form>
 </div>
